@@ -1,8 +1,15 @@
 class HomeController < ApplicationController
   def index
 
-    Prawn::Document.generate("hello.pdf") do
-      text "Hello World!"
+
+  end
+
+  def show
+    @name=params[:name]
+    subject=params[:subject]
+    subject=params[:subject]
+    Prawn::Document.generate(@name+".pdf") do
+      text "#{subject}"
     end
   end
 end
